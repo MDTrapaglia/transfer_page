@@ -1,0 +1,17 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: filebrowser
+    # Ajusta el puerto de la izquierda si prefieres otro; 3050 -> puerto externo, 80 -> puerto interno del contenedor.
+    ports:
+      - "3050:80"
+    # Cambia /home/mtrapaglia/Data/shared-folder por la carpeta local que quieras exponer.
+    volumes:
+      - /home/mtrapaglia/Data/shared-folder:/srv
+      - ./data:/database
+      - ./config:/config
+    environment:
+      - FB_BASEURL=/transfer
+    # Ejecuta el contenedor con tu UID/GID para evitar problemas de permisos (mtrapaglia = 1000:1000).
+    user: "1000:1000"
+    restart: unless-stopped
