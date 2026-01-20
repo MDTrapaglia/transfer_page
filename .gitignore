@@ -1,0 +1,7 @@
+# Local secrets and runtime state
+.env
+data/
+
+# Editor files
+*.swp
+*.swo
