@@ -38,3 +38,7 @@ docker compose ps
 
 Acceso web:
 - Navega a `https://matiastrapaglia.space/transfer/` (proxy Nginx al contenedor en el puerto interno 80; base url `/transfer`).
+
+## Cuentas
+- La cuenta `admin` por defecto está renombrada y con contraseña bloqueada; se mantiene solo por requisitos internos de FileBrowser.
+- Usa únicamente la cuenta de administración personal configurada fuera del repo (rota la contraseña regularmente con `docker compose run --rm filebrowser users update <usuario> -p <nueva_clave> --database /database/filebrowser.db`).
